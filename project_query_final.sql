@@ -54,7 +54,7 @@ select * from account_table
 SELECT DISTINCT adresss , city
 from customer_table
 
---جمع تراکنش ها بر حسب ماه
+--Sum of monthly transactions
 SELECT sum(amount) as 'sum of amount' , MONTH(transaction_date) as 'month of transaction date'
 from transaction_table
 group by MONTH(transaction_date)
@@ -84,11 +84,12 @@ select AVG(balance) as 'balance', MAX(balance) as 'maximum balance', statuss
 from account_table
 group by statuss
 
---تعداد شعبه ها به تفکیک منطقه
+--Number of banks' branches with district distinction
 select count(addresss) as 'address'  , namee
 from branch_table
 group by namee
 
+--For accounts with status = 1 get reports based on average balance less than 800 and in descending order classified by last activity status 
 --برای اکانتهایی که استتوس = 1 عه میانگین بالانسشون به تفکیک آخرین وضعیت فعالیت کوچکتر از 800 و  به ترتیب نزولی
 select AVG(balance) as 'balance avg',last_activity_date
 from account_table
@@ -135,6 +136,7 @@ having max(amount)<200
 select amount from transaction_table
 where amount>(select avg(amount) from transaction_table)
 
+--Prepare a report that puts together the account balance and the day of the customer's transaction and the customer's address
 --گزارشی تهیه کنید که بالانس اکانت و روز تراکنش مشتری و آدرس مشتری را کنار هم قرار دهد
 SELECT account.balance AS 'balance' , DAY(transactionn.transaction_date) as 'transaction day' , customer.adresss AS 'customer address'
 FROM account_table AS account
