@@ -1,4 +1,4 @@
-# bank-database
+# Bank database
 ![bank-diagram](https://user-images.githubusercontent.com/89376296/132715821-178b4027-1851-46f8-aeb6-0025de0b2c93.png)
 This SQL script creates a bank RDBMS which, includes five tables as well as some attributes. Also, the diagram above demonstrates the relationships between each table.
 
