@@ -8,5 +8,5 @@ This SQL script creates a bank RDBMS which, includes five tables as well as some
 * Number of banks' branches with district distinction
 * For accounts with status = 1, average balance less than 800 and in descending order classified by last activity status
 * Multiple joins
-* based on aggregation functions using a subquery
+* Based on aggregation functions using a subquery
 * Putting together the account balance and the day of the customer's transaction, and the customer's address
